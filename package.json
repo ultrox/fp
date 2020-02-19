@@ -1,0 +1,18 @@
+{
+  "name": "@ma.vu/htpd",
+  "version": "0.0.0-development",
+  "description": "bunch of small cute function from htdp",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [],
+  "main": "dist/htdp.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Marko Vujanic",
+  "license": "MIT"
+}
