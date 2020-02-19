@@ -1,6 +1,6 @@
 {
   "name": "@ma.vu/htdp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "bunch of small cute little functions",
   "publishConfig": {
     "access": "public"
