@@ -1,7 +1,7 @@
 {
-  "name": "@ma.vu/htpd",
-  "version": "0.0.0-development",
-  "description": "bunch of small cute function from htdp",
+  "name": "@ma.vu/htdp",
+  "version": "0.0.1",
+  "description": "bunch of small cute little functions",
   "publishConfig": {
     "access": "public"
   },

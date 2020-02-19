@@ -62,7 +62,7 @@ export function isFloat(n) {
 export const is = {
   zero: isZero,
   empty: isEmpty,
-  int: isIntager,
+  int: isInt,
   float: isFloat
 };
 
