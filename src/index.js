@@ -2,7 +2,7 @@
  * String → [arrof String]
  */
 
-export function explode(str) {
+function explode(str) {
   return str.split("");
 }
 
@@ -11,7 +11,7 @@ export function explode(str) {
  * what dose it compute?
  */
 
-export function implode(arr) {
+function implode(arr) {
   return arr.join("");
 }
 
@@ -20,7 +20,7 @@ export function implode(arr) {
  * first element of given list
  */
 
-export function first(arr) {
+function first(arr) {
   if (isZero(arr.length))
     throw new Error(`Expecting non-empty list; Given ${arr}`);
   return arr[0];
@@ -35,36 +35,44 @@ function rest(arr) {
   return arr.slice(1);
 }
 
-export function take(arr, n) {
+function take(arr, n) {
   return isEmpty(arr) || isZero(n) ? [] : arr.slice(0, n);
 }
 
-export function drop(arr, n) {
+function drop(arr, n) {
   return isEmpty(arr) || isZero(n) ? [] : arr.slice(n);
 }
 
-export function isZero(n) {
+function isZero(n) {
   return n === 0;
 }
 
-export function isEmpty(arr) {
+function isEmpty(arr) {
   return isZero(arr.length);
 }
 
-export function isInt(n) {
-  return Number.isInstager(n);
+function isInt(n) {
+  return Number.isInteger(n);
 }
 
-export function isFloat(n) {
+function isFloat(n) {
   return !isInt(n);
 }
 
-export const is = {
+function isEven(n) {
+  return n % 2 === 0
+}
+
+const is = {
   zero: isZero,
   empty: isEmpty,
   int: isInt,
-  float: isFloat
+  float: isFloat,
+  odd: n => !isEven(n),
+  even: isEven
 };
+
+function add1(n) { return n + 1 }
 
 function _not(fn) {
   return function(...args) {
@@ -72,7 +80,18 @@ function _not(fn) {
   };
 }
 
-export function fill(a) {
-  return new Array(a).fill(0)
+function fill(a, f = 0) {
+  return new Array(a).fill(f);
 }
 
+module.exports = {
+  implode,
+  explode,
+  first,
+  rest,
+  take,
+  drop,
+  is,
+  fill,
+  add1
+};
