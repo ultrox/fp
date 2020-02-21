@@ -31,8 +31,8 @@ export function first(arr) {
  * return arr of all but first element or empty array
  */
 
-export function rest(arr) {
-  return arr.slice(0);
+function rest(arr) {
+  return arr.slice(1);
 }
 
 export function take(arr, n) {
