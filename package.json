@@ -1,12 +1,12 @@
 {
   "name": "@ma.vu/htdp",
-  "version": "0.0.2",
+  "version": "0.0.8",
   "description": "bunch of small cute little functions",
   "publishConfig": {
     "access": "public"
   },
   "files": [],
-  "main": "dist/htdp.js",
+  "main": "src/index.js",
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
