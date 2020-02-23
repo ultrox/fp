@@ -1,0 +1,19 @@
+sudo: false
+language: node_js
+cache:
+  directories:
+    - ~/.npm
+notifications:
+  email: false
+node_js:
+  - '10'
+  - '11'
+install:
+  - npm install -g semantic-release codecov
+  - npm install
+script: npm t
+after_success:
+  - semantic-release
+  - codecov
+branches:
+  only: master

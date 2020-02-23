@@ -106,3 +106,5 @@ coverage/
 !.gitignore
 !.editorconfig
 !.phpcs.xml.dist
+!.travis.yml
+!.releaserc
