@@ -1,18 +1,46 @@
 {
   "name": "@ma.vu/htdp",
-  "version": "0.0.8",
+  "version": "0.0.0-development",
   "description": "bunch of small cute little functions",
   "publishConfig": {
     "access": "public"
   },
   "files": [],
   "main": "src/index.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "is-ci-cli": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-mavu": "^14.3.0",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "test": "is-ci \"test:coverage\" \"test:watch\"",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
+    "prettier": "prettier \"**/*.+(js|json|md)\"",
+    "format": "npm run prettier -- --write",
+    "precommit": "lint-staged",
+    "validate": "npm run prettier -- --list-different"
   },
   "keywords": [],
   "author": "Marko Vujanic",
-  "license": "MIT"
+  "license": "MIT",
+  "lint-staged": {
+    "linters": {
+      "package.json": ["prettier --write", "git add"],
+      "**/+(src|test|scripts)/**/*.js": [
+        "prettier --write",
+        "eslint",
+        "git add"
+      ]
+    }
+  },
+  "eslintIgnore": ["node_modules", "dist"]
 }

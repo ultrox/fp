@@ -97,6 +97,7 @@ Thumbs.db
 *.key
 *.pem
 dist
+coverage/
 # -------------------------
 # BEGIN Whitelisted Files
 # -------------------------
