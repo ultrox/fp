@@ -3,7 +3,7 @@
  */
 
 function explode(str) {
-  return str.split("");
+  return str.split('')
 }
 
 /**
@@ -12,7 +12,7 @@ function explode(str) {
  */
 
 function implode(arr) {
-  return arr.join("");
+  return arr.join('')
 }
 
 /**
@@ -22,8 +22,8 @@ function implode(arr) {
 
 function first(arr) {
   if (isZero(arr.length))
-    throw new Error(`Expecting non-empty list; Given ${arr}`);
-  return arr[0];
+    throw new Error(`Expecting non-empty list; Given ${arr}`)
+  return arr[0]
 }
 
 /**
@@ -32,31 +32,31 @@ function first(arr) {
  */
 
 function rest(arr) {
-  return arr.slice(1);
+  return arr.slice(1)
 }
 
 function take(arr, n) {
-  return isEmpty(arr) || isZero(n) ? [] : arr.slice(0, n);
+  return isEmpty(arr) || isZero(n) ? [] : arr.slice(0, n)
 }
 
 function drop(arr, n) {
-  return isEmpty(arr) || isZero(n) ? [] : arr.slice(n);
+  return isEmpty(arr) || isZero(n) ? [] : arr.slice(n)
 }
 
 function isZero(n) {
-  return n === 0;
+  return n === 0
 }
 
 function isEmpty(arr) {
-  return isZero(arr.length);
+  return isZero(arr.length)
 }
 
 function isInt(n) {
-  return Number.isInteger(n);
+  return Number.isInteger(n)
 }
 
 function isFloat(n) {
-  return !isInt(n);
+  return !isInt(n)
 }
 
 function isEven(n) {
@@ -69,19 +69,21 @@ const is = {
   int: isInt,
   float: isFloat,
   odd: n => !isEven(n),
-  even: isEven
-};
+  even: isEven,
+}
 
-function add1(n) { return n + 1 }
+function add1(n) {
+  return n + 1
+}
 
 function _not(fn) {
   return function(...args) {
-    return !fn(...args);
-  };
+    return !fn(...args)
+  }
 }
 
 function fill(a, f = 0) {
-  return new Array(a).fill(f);
+  return new Array(a).fill(f)
 }
 
 module.exports = {
@@ -93,5 +95,5 @@ module.exports = {
   drop,
   is,
   fill,
-  add1
-};
+  add1,
+}
